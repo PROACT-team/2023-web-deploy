@@ -5,7 +5,7 @@ matplotlib == 3.5.1
 pandas ==1.5.3
 numpy == 1.23.5
 cloudpickle == 3.0.0
-urllib3 1.26.8
+urllib3 == 1.26.8
 formulaic == 0.6.6
 lifelines == 0.27.8
 scikit-learn == 1.2.2
