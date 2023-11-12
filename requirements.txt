@@ -1,0 +1,7 @@
+streamlit == 1.12.0
+pandas ==1.5.3
+numpy == 1.23.5
+formulaic == 0.6.6
+lifelines == 0.27.8
+scikit-learn == 1.2.2
+scikit-survival == 0.20.0
