@@ -21,6 +21,7 @@ from sklearn.preprocessing import RobustScaler
 
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import joblib
 import seaborn as sns
 import altair as alt 
 
@@ -33,6 +34,7 @@ from urllib.request import Request, urlopen
 import zipfile
 import os
 
+import streamlit_authenticator as stauth
 
 pd.set_option('display.width', 10) 
 st.experimental_set_query_params(lang="en")
@@ -41,8 +43,8 @@ st.set_page_config(layout='wide')
 # when using local files...
 proact_train_set = pd.read_csv('data/X_and_Y_with_NaNs.csv')
 
-aft = pickle.load(open('data/aft1122.pkl', 'rb'))
-cph = pickle.load(open('data/cph1122.pkl', 'rb'))
+aft = joblib.load('data/aft1122.pkl')
+cph = joblib.load('data/cph1122.pkl')
     
 train_aft = pd.read_csv('data/train_aft_1122.csv')
 train_cph = pd.read_csv('data/train_cph_1122.csv')
