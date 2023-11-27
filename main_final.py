@@ -36,7 +36,6 @@ import os
 
 
 pd.set_option('display.width', 10) 
-st.experimental_set_query_params(lang="en")
 st.set_page_config(layout='wide')
 
 # when using local files...
