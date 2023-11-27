@@ -125,7 +125,7 @@ with ti_col2:
     tti_col1, tti_col2 = st.columns([1.3,1])
        
 # Create Tabs (page shifting)
-tab1, tab2 = st.tabs(['Run Prediction', 'About'])
+tab1, tab2 = st.tabs([ 'About', 'Run Prediction'])
 
 # Tab style
 st.markdown("""
@@ -191,7 +191,7 @@ if 'edited_alsfrs_raw' not in st.session_state:
 timestamp = pd.Timestamp(date.today())
 date_string = timestamp.strftime("%Y-%m-%d")
 
-with tab1:
+with tab2:
  # Run prediction을 누르면 표시될 내용 
  st.title('')
  
@@ -771,7 +771,7 @@ with tab1:
                    """)
         
 
-with tab2:
+with tab1:
   # About을 누르면 표시될 내용
   
   # Define the data
