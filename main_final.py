@@ -306,7 +306,7 @@ with tab1:
 **※ Date of visit**: Type in the form of YYYY-MM-DD or Click the calendar icon\n
 **※ Follow-up duration**: should be in range of 1.5 ~ 3.0 months\n
 **※ Error messages**: Try again with "Click to Save" if an error message appears\n'''
-       st.markdown('**Fill data here ↓**', help=help_input)
+       st.markdown('**Please read the instructions first →**', help=help_input)
        
        edited_alsfrs_raw = st.data_editor(st.session_state['edited_alsfrs_raw'], 
                                           key=data_editor_key, num_rows="dynamic", 
