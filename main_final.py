@@ -92,7 +92,7 @@ def extract_and_load_pkl(zip_path, pkl_filename, extract_to='.'):
 
     return data
 
-rsf = extract_and_load_pkl('data/rsf_1122.zip', 'rsf_1122.pkl')
+rsf = extract_and_load_pkl('data/rsf1122.zip', 'rsf1122.pkl')
 
 # Define a function which is needed later
 def predict_rsf_percentile(data, percentile):
