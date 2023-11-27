@@ -118,7 +118,7 @@ def ordinal(n):
 ti_col1, ti_col2 = st.columns([3.15,0.76])
 with ti_col1:
     st.title('Predicting Loss of Autonomy in Swallowing Function in ALS Patients')
-    st.subheader('Web application ver. (※Not For Clinical Use)')
+    st.subheader('Web application ver.')
     st.subheader('')
 with ti_col2:
     st.image('https://github.com/PROACT-team/2022-Final-scripts/assets/78291206/3c6b0278-157a-4185-b4dd-9fa90690fe58')
