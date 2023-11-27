@@ -85,7 +85,7 @@ def extract_and_load_pkl(zip_path, pkl_filename, extract_to='.'):
 
     # Load the extracted pkl file
     with open(pkl_path, 'rb') as file:
-        data = pickle.load(file)
+        data = pd.read_pickle(file)
 
     # Optionally, remove the extracted file if you don't need it
     os.remove(pkl_path)
