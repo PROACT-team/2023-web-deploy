@@ -361,7 +361,7 @@ with tab1:
       st.markdown("""
                     <style>
                     /* metric styling */
-                    div.css-5oei5.eqr7zpz{
+                    div.css-3mmywe.e15ugz7a0{
 			font-size: 3px;
             }
             </style>
