@@ -33,7 +33,6 @@ from urllib.request import Request, urlopen
 import zipfile
 import os
 
-import streamlit_authenticator as stauth
 
 pd.set_option('display.width', 10) 
 st.experimental_set_query_params(lang="en")
