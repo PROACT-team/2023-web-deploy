@@ -42,8 +42,8 @@ st.set_page_config(layout='wide')
 # when using local files...
 proact_train_set = pd.read_csv('data/X_and_Y_with_NaNs.csv')
 
-aft = joblib.load('data/aft1122.pkl')
-cph = joblib.load('data/cph1122.pkl')
+aft = pd.read_pickle('data/aft1122.pkl')
+cph = pd.read_pickle('data/cph1122.pkl')
     
 train_aft = pd.read_csv('data/train_aft_1122.csv')
 train_cph = pd.read_csv('data/train_cph_1122.csv')
