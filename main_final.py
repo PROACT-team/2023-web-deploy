@@ -915,7 +915,7 @@ with tab2:
   st.write('')  
   st.subheader('Contact Us')
   st.markdown('''If you encounter any issues or have questions, please contact our support team.
-              (email: nrhong@gmail.com)''')
+              (nrhong@gmail.com)''')
 
   st.markdown("""
   <style>
