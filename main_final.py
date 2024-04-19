@@ -115,7 +115,7 @@ def ordinal(n):
 
 
 # Set title
-ti_col1, ti_col2 = st.columns([4,1])
+ti_col1, ti_col2 = st.beta_columns([4,1])
 with ti_col1:
     st.title('Predicting Loss of Autonomy in Swallowing Function in ALS Patients')
     st.subheader('Web application ver.')
