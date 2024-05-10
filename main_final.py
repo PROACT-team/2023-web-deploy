@@ -168,6 +168,10 @@ st.markdown(css, unsafe_allow_html=True)
 
 
 min_date = pd.to_datetime(date.today() - relativedelta(months=3))
+date_2 = pd.to_datetime(date.today() - relativedelta(months=2))
+date_3 = pd.to_datetime(date.today() - relativedelta(months=1))
+today = pd.to_datetime(date.today())
+
 default_alsfrs_raw  = pd.DataFrame(    [
        #{ "Date": min_date, "Q1": 4, "Q2": 3, "Q3": 3, 
         #"Q4": 2, "Q5": 3, "Q6": 3, "Q7": 3, 
@@ -179,6 +183,22 @@ default_alsfrs_raw  = pd.DataFrame(    [
         "Q4": np.nan , "Q5":  np.nan, "Q6": np.nan , "Q7":  np.nan, 
         "Q8": np.nan , "Q9": np.nan , "R1": np.nan , "R2": np.nan , "R3": np.nan }
        ])
+# Creating the DataFrame
+default_df = pd.DataFrame({
+    "Date": [min_date, date_2, date_3, today],
+    "Q1": [4, 3, 3, 4],
+    "Q2": [4, 4, 3, 3],
+    "Q3": [4, 3, 4, 4],
+    "Q4": [3, 3, 2, 2],
+    "Q5": [3, 3, 3, 2],
+    "Q6": [3, 2, 3, 3],
+    "Q7": [3, 3, 3, 3],
+    "Q8": [3, 3, 3, 2],
+    "Q9": [4, 3, 3, 3],
+    "R1": [4, 3, 3, 3],
+    "R2": [4, 3, 3, 3],
+    "R3": [4, 4, 4, 3]
+})
 
 if 'reset_clicked' not in st.session_state:
     st.session_state.reset_clicked = False
@@ -283,19 +303,26 @@ with tab2:
             
       container1 = st.container()
       container2 = st.container()
-      
+	   
+      if 'use_default_data' not in st.session_state:
+        st.session_state['use_default_data'] = False 
+	      
       with container2:
        svcol1, svcol2 = st.columns([1.3,4])
+       def reset_button_ss():
+           st.session_state["p"] = False
+	       
        with svcol1:
         save_button = st.form_submit_button('Click to Save')
        with svcol2:
-        reset_button = st.form_submit_button('Reset')
+        reset_button = st.form_submit_button('Reset', on_click=reset_button_ss)
        if reset_button:
           # Increment the reset counter
           st.session_state.reset_clicked = True
           st.session_state['reset_counter'] += 1
           # Reset the dataframe
           st.session_state['edited_alsfrs_raw'] = default_alsfrs_raw.copy()
+	  st.session_state['use_default_data'] = False
           with h_col1:
               st.experimental_rerun()
           
@@ -308,7 +335,23 @@ with tab2:
 **※ Error messages**: Try again with "Click to Save" if an error message appears\n'''
        st.markdown('**Please read the instructions first →**', help=help_input)
        
-       edited_alsfrs_raw = st.data_editor(st.session_state['edited_alsfrs_raw'], 
+       # Checkbox for selecting whether to use the default data
+       use_default = st.checkbox('Use default values', value=st.session_state['use_default_data'])
+    
+       if use_default:
+         edited_alsfrs_raw = st.data_editor(default_df.copy(), 
+                                          key=data_editor_key, num_rows="dynamic", 
+                                          use_container_width=True, 
+                                          column_config={
+                                              "Date": st.column_config.DateColumn(
+                                                  "Date",
+                                                  min_value=date(1900, 1, 1),
+                                                  max_value=date.today(),
+                                                  format="YYYY-MM-DD",
+                                                  step=1,
+                                                  )}).query('index != "Example:"')
+       else:
+         edited_alsfrs_raw = st.data_editor(default_alsfrs_raw.copy(), 
                                           key=data_editor_key, num_rows="dynamic", 
                                           use_container_width=True, 
                                           column_config={
@@ -911,7 +954,12 @@ with tab1:
   
     
   
-  st.write('')  
+  st.write('')
+  st.subheader('Video demonstration')
+  vid_col1, vid_col2 = st.columns([1,2])
+  with vid_col1:
+      st.video('https://youtu.be/4tdJGfuemks?feature=shared') 
+
   st.subheader('Contact Us')
   st.markdown('''If you encounter any issues or have questions, please contact our support team.
               (nrhong@gmail.com)''')
