@@ -309,13 +309,12 @@ with tab2:
 	      
       with container2:
        svcol1, svcol2 = st.columns([1.3,4])
-       def reset_button_ss():
-	 st.session_state["p"] = False
+     
 	       
        with svcol1:
         save_button = st.form_submit_button('Click to Save')
        with svcol2:
-        reset_button = st.form_submit_button('Reset', on_click=reset_button_ss)
+        reset_button = st.form_submit_button('Reset')
        if reset_button:
           # Increment the reset counter
           st.session_state.reset_clicked = True
