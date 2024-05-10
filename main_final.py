@@ -310,7 +310,7 @@ with tab2:
       with container2:
        svcol1, svcol2 = st.columns([1.3,4])
        def reset_button_ss():
-           st.session_state["p"] = False
+	 st.session_state["p"] = False
 	       
        with svcol1:
         save_button = st.form_submit_button('Click to Save')
@@ -322,7 +322,6 @@ with tab2:
           st.session_state['reset_counter'] += 1
           # Reset the dataframe
           st.session_state['edited_alsfrs_raw'] = default_alsfrs_raw.copy()
-	  st.session_state['use_default_data'] = False
           with h_col1:
               st.experimental_rerun()
           
