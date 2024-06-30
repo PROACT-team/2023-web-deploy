@@ -1,15 +1,15 @@
+streamlit==1.24.0
+streamlit-nested-layout==0.1.2
+pandas==1.5.3
+numpy==1.23.5
+scikit-learn==1.2.2
+scikit-survival==0.20.0
+formulaic==0.6.6
+lifelines==0.27.8
+cloudpickle==3.0.0
+altair==4.2.0
+seaborn==0.11.2
+matplotlib==3.5.1
+joblib==1.2.0
+python-dateutil==2.8.2
 scipy==1.7.3
-streamlit == 1.24.0
-streamlit-nested-layout == 0.1.2
-pandas ==1.5.3
-numpy == 1.23.5
-scikit-learn == 1.2.2
-scikit-survival == 0.20.0
-formulaic == 0.6.6
-lifelines == 0.27.8
-cloudpickle == 3.0.0
-altair == 4.2.0
-seaborn == 0.11.2
-matplotlib == 3.5.1
-joblib
-python-dateutil
