@@ -7,6 +7,7 @@ Created on Sat Feb 12 19:07:35 2022
 
 # import libraries needed
 pip install --upgrade pip
+pip install setuptools
 import streamlit as st
 import streamlit_nested_layout
 
