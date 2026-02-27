@@ -10,7 +10,8 @@ rich==13.7.1
 streamlit-nested-layout==0.1.2
 pandas==1.5.3
 numpy==1.23.5
-scikit-learn==1.2.2
+#scikit-learn==1.2.2
+scikit-learn==1.3.2
 scikit-survival==0.22.0
 formulaic==0.6.6
 lifelines==0.27.8
@@ -21,6 +22,7 @@ matplotlib==3.5.1
 joblib==1.2.0
 python-dateutil==2.8.2
 scipy==1.10.0
+
 
 
 
