@@ -2,8 +2,8 @@ pip==23.2.1
 setuptools==68.2.2
 wheel==0.41.3
 
-#streamlit==1.24.0
-streamlit>=1.32,<2
+streamlit==1.24.0
+#streamlit>=1.32,<2
 rich==14.3.3
 
 streamlit-nested-layout==0.1.2
@@ -20,6 +20,7 @@ matplotlib==3.5.1
 joblib==1.2.0
 python-dateutil==2.8.2
 scipy==1.10.0
+
 
 
 
